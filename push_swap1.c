@@ -6,7 +6,7 @@
 /*   By: cjoao-me <cjoao-me@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:53:10 by cjoao-me          #+#    #+#             */
-/*   Updated: 2023/03/31 17:31:44 by cjoao-me         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:50:28 by cjoao-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,16 @@ int	ft_lstposition(int n, t_list *lst)
 	return (p);
 }
 
+int	ft_lstsorted(t_list *lst)
+{
+	while (lst && (*lst).next)
+	{
+		if (lst->content > (*lst).next->content)
+			return (0);
+		lst = (*lst).next;
+	}
+	return (1);
+}
 
 void	print_lst(t_list *lista)
 {
@@ -294,10 +304,15 @@ void	sort_4_5(t_list **stack_a, t_list **stack_b)
 		pull_min_up(stack_a);
 		move_pb(stack_a, stack_b);
 	}
-	pull_min_up(stack_a);
-	move_pb(stack_a, stack_b);
-	sort_3(stack_a);
-	move_pa(stack_a, stack_b);
+	
+	if (!ft_lstsorted(*stack_a))
+	{
+		pull_min_up(stack_a);
+		move_pb(stack_a, stack_b);
+		if (!ft_lstsorted(*stack_a))
+			sort_3(stack_a);
+		move_pa(stack_a, stack_b);
+	}
 	if (len > 4)
 		move_pa(stack_a, stack_b);
 }
