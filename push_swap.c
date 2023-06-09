@@ -6,7 +6,7 @@
 /*   By: cjoao-me <cjoao-me@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:53:10 by cjoao-me          #+#    #+#             */
-/*   Updated: 2023/06/08 13:12:21 by cjoao-me         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:52:16 by cjoao-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	push_swap(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 		ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(argv[i++])));
-	//print_lst(stack_a);
 	if (check_arg_order(argc, argv))
 	{
 		if (argc <= 6)
@@ -31,8 +30,6 @@ void	push_swap(int argc, char **argv)
 		else
 			quicksort_a(&stack_a, &stack_b, argc - 1);
 	}
-	//print_lst(stack_a);
-	//print_lst(stack_b);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
 }

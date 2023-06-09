@@ -6,13 +6,13 @@
 #    By: cjoao-me <cjoao-me@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 16:04:42 by cjoao-me          #+#    #+#              #
-#    Updated: 2023/06/08 15:14:15 by cjoao-me         ###   ########.fr        #
+#    Updated: 2023/06/09 17:54:53 by cjoao-me         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = push_swap.c list_basics.c list_utils.c quicksort.c \
+SRC = push_swap.c list_basics.c list_utils.c quicksort_a.c  quicksort_b.c \
 	smallsort.c moves.c checkerrors.c pivot.c
 
 OBJ = $(SRC:.c=.o)

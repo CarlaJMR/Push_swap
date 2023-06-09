@@ -6,7 +6,7 @@
 /*   By: cjoao-me <cjoao-me@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:53:10 by cjoao-me          #+#    #+#             */
-/*   Updated: 2023/06/08 15:11:49 by cjoao-me         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:51:11 by cjoao-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ int			*sort_array(int *arr, int size);
 void		sort_three_top_a(t_list **stack, int size);
 //void	sort_five_top_a(t_list **stack_a, t_list **stack_b, int size);
 void		sort_three_top_b(t_list **stack, int size);
+void		partition_a(t_list **stack_a, t_list **stack_b, int size, \
+int *pcount);
+void		partition_b(t_list **stack_a, t_list **stack_b, int size, \
+int *pcount);
 void		quicksort_a(t_list **stack_a, t_list **stack_b, int size);
 void		quicksort_b(t_list **stack_a, t_list **stack_b, int size);
 void		push_swap(int argc, char **argv);
